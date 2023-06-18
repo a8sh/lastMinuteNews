@@ -1,4 +1,4 @@
-import React, {useEffect,useState} from "react";
+import React, {useEffect , useState} from "react";
 import NewsItem from "./NewsItem";
 import Spinner from "./Spinner";
 import PropTypes from "prop-types";
@@ -18,7 +18,7 @@ const News = (props)=>  {
 
 	const updateNews= async()=> {
 		props.setProgress(10);
-		const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=a447c9e9b0c24c0da463bfa369a28bf0&page=${page}&pagesize=${props.pageSize}`;
+		const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=05b7fa606b3947818b620ef51836c764&page=${page}&pagesize=${props.pageSize}`;
 		setLoading(true);
 		let data = await fetch(url);
 		props.setProgress(30);
@@ -35,7 +35,7 @@ const News = (props)=>  {
 	},[])
 	const fetchMoreData = async() => {
 		setPage(page+1)
-		const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=a447c9e9b0c24c0da463bfa369a28bf0&page=${page+1}&pagesize=${props.pageSize}`;
+		const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=05b7fa606b3947818b620ef51836c764&page=${page+1}&pagesize=${props.pageSize}`;
 		// this.setState({ loading: true });
 		let data = await fetch(url);
 		let parsedData = await data.json();
